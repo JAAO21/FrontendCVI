@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { useNavigate } from "react-router-dom";
 
+import moment from 'moment';
+
 import {
     DatePicker,
     Form,
@@ -25,9 +27,12 @@ const FormSeller = ({ imageSeller }) => {
     const onFormLayoutChange = ({ size }) => {
         setComponentSize(size);
     };
+    let dateNow = new Date();
     const onFinish = (values) => {
-        const { firstName, firstLastName, nationality, identificationType, identificationNumber, birthDate, age, gender, location_seller, product } = values;
+        const { firstName, firstLastName, nationality, identificationType, identificationNumber, birthDate, gender, email, product } = values;
         const name_user = localStorage.getItem("name_user")
+
+
         const data = {
             firstName,
             firstLastName,
@@ -35,13 +40,15 @@ const FormSeller = ({ imageSeller }) => {
             identificationType,
             identificationNumber,
             birthDate: birthDate.$y + '-' + (birthDate.$M + 1) + '-' + birthDate.$D,
-            age,
+            age: moment().diff(birthDate.$d, 'years'),
             gender,
-            location_seller,
+            location_seller: 'Plaza la concordia',
             name_user,
-            product
+            product,
+            email
         }
 
+        console.log(data)
         const createSeller = GetCVI({ 'atribute': 'seller', data });
 
         createSeller.then((succes, err) => {
@@ -53,10 +60,10 @@ const FormSeller = ({ imageSeller }) => {
                 const imageData = { title, key, url }
 
                 const CreateImage = GetCVI({ 'atribute': 'api/images/uploadImages', data: imageData });
-                CreateImage.then((succes, err)=>{
-                    console.log('imagen enviada',succes)
-                    if(err) console.log(err)
-                    if(succes.status){
+                CreateImage.then((succes, err) => {
+                    console.log('imagen enviada', succes)
+                    if (err) console.log(err)
+                    if (succes.status) {
                         console.log('enviando a ruta')
                         navigate(`/informacionVendedor/${identificationNumber}`);
                     }
@@ -92,9 +99,11 @@ const FormSeller = ({ imageSeller }) => {
                 <Item label="Nombre" name="firstName">
                     <Input />
                 </Item>
+
                 <Item label="Apellido" name="firstLastName">
                     <Input />
                 </Item>
+
                 <Item label="Nacionalidad" name="nationality">
                     <Select>
                         <Option value="colombiana">Colombiana</Option>
@@ -102,21 +111,26 @@ const FormSeller = ({ imageSeller }) => {
                         <Option value="otro">otro</Option>
                     </Select>
                 </Item>
+
+                <Item label="Fecha nacimiento" name="birthDate">
+                    <DatePicker />
+                </Item>
+
                 <Item label="Tipo de documento" name="identificationType">
                     <Select>
                         <Option value="cc">C.C</Option>
                         <Option value="ce">C.E</Option>
                     </Select>
                 </Item>
+
                 <Item label="Numero de identificación" name="identificationNumber">
                     <Input />
                 </Item>
-                <Item label="Fecha nacimiento" name="birthDate">
-                    <DatePicker />
+
+                <Item label="correo" name="email">
+                    <Input />
                 </Item>
-                <Item label="Edad" name="age">
-                    <InputNumber />
-                </Item>
+
                 <Item label="Genero" name="gender">
                     <Select>
                         <Option value="male">Hombre</Option>
@@ -125,19 +139,12 @@ const FormSeller = ({ imageSeller }) => {
                     </Select>
                 </Item>
 
-                <Item label="Ubicacíon" name="location_seller">
-                    <Select>
-                        <Option value="plaza_concordia">Plaza la concordia</Option>
-                        <Option value="plaza_satelite">Plaza la satelite</Option>
-                    </Select>
-                </Item>
-
                 <Item label="Producto" name="product">
                     <Select>
                         <Option value="platano">Platano</Option>
                         <Option value="piña">Piña</Option>
                         <Option value="mango">Mango</Option>
-                        <Option value="leche_cabra">Mango</Option>
+                        <Option value="leche_cabra">Leche de cabra</Option>
                         <Option value="varios">Varios</Option>
                     </Select>
                 </Item>

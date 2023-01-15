@@ -15,12 +15,12 @@ const DocumentPdf = ({ firstName,
     qr,
     img }) => {
 
-        
+
     return (
         <Document>
             <Page size="A4">
                 <View style={{ "display": "flex", "justifyContent": "center", "alignItems": "centers", "flexDirection": "column" }}>
-                    <Image src={img} style={{ "height": "100px", "width": "150px" }} alt="no image" />
+                    {img && <Image src={img} style={{ "height": "100px", "width": "150px" }} alt="no image" />}
                     <Text>Nombre:{firstName} {firstLastName}</Text>
                     <Text>Nacionalidad: {nationality}</Text>
                     <Text>{identificationType}: {identificationNumber}</Text>

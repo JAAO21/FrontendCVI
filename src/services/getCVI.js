@@ -7,7 +7,6 @@ const GetCVI = async ({ atribute, data, typeFile }) => {
     console.log("DATA", data)
     const formData = new FormData();
     formData.append("file", data);
-    formData.append("title", "Nepe");
 
     console.log("FROM", formData)
     return await fetch(url, {
