@@ -1,0 +1,24 @@
+.ant-card-body {
+    height: 55px;
+}
+
+h1 {
+    font: verdana;
+    text-align: center;
+
+}
+
+.containerTextImgSeller {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 60% 40%;
+    background-color: #b3847182;
+}
+
+@media only screen and (max-width: 850px) {
+    .containerTextImgSeller{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}

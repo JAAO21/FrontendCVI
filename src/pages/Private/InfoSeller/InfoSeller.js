@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { Typography } from 'antd'
 
 import { useParams } from 'react-router-dom';
 import QRCode from "react-qr-code";
@@ -9,6 +9,9 @@ import useCVI from '../../../hooks/useCVI';
 
 import './index.css';
 import { InfoSeller2 } from './infoSeller2';
+
+
+const { Title } = Typography
 const InfoSeller = () => {
     let { identificationNumber } = useParams();
     const [verPdf, SetVerPdf] = useState(false);
@@ -26,10 +29,8 @@ const InfoSeller = () => {
     console.log("INFOS", infoS)
     return (
         <div>
-            <div className='containerInfoSellerData'>
-                {infoS?.seller?.length > 0 && <InfoSeller2 seller={infoS.seller[0]} url={url} />}
-            </div>
-
+            <Title className="formTitle">Vendedor</Title>
+            {infoS?.sellers?.length > 0 && <InfoSeller2 seller={infoS.sellers[0]} url={url} />}
         </div>
     )
 }

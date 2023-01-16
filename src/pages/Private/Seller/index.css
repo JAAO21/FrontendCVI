@@ -1,39 +1,38 @@
-
-.containerSeller{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+.containerSeller {
+    /* display: grid;
+    grid-template-columns: repeat(2,1fr); */
+    display: flex;
 }
 
-.divTakePhoto{
+.divTakePhoto {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
-    width: 100%;
-
-  
 }
-.divTakePhoto h2{
+
+.divTakePhoto h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.divButtonSeller{
+
+.divButtonSeller {
     display: flex;
     justify-content: center;
 }
 
-.divWebcamSeller{
+.divWebcamSeller {
     display: flex;
     flex-direction: column;
 }
 
 
-.sytleSeller{
+.sytleSeller {
     border: 1px solid #2d3fad;
     border-radius: 15px;
 }
 
-.divFomrSeller{
+.divFomrSeller {
     width: 100%;
 }

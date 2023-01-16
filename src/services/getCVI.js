@@ -15,6 +15,7 @@ const GetCVI = async ({ atribute, data, typeFile }) => {
     })
       .then(data => data.json())
   } else if (data) {
+    console.log(data)
     return await fetch(url, {
       method: 'POST',
       headers: {

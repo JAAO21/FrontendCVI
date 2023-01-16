@@ -1,11 +1,11 @@
 import { Button } from 'antd';
 
-const MyButton = ({onClick,name,styleButton})=>{
-    
-    return(
-        <Button type="primary" size={'large'} onClick={onClick} htmlType="submit" className={styleButton}>
+const MyButton = ({ onClick, name, styleButton, htmlType }) => {
+
+    return (
+        <Button type="primary" size={'large'} onClick={onClick} htmlType={htmlType} className={styleButton}>
             {name}
-          </Button>
+        </Button>
     )
 }
 

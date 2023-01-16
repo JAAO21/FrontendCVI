@@ -1,0 +1,40 @@
+.about {
+    font-size: 14px;
+  }
+  
+  .containerAbout {
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+  
+
+  }
+  
+.containerTitleP{
+    display: grid;
+    justify-items: center;
+    margin: 13px;
+    height: 215px;
+}
+
+  .pAbout{
+        font-size: 17px;
+  }
+
+.containerTitleP2Text{
+    display: grid;
+    justify-items: center;
+    margin: 13px;
+}
+.pDevsAbout{
+    font-size: 17px;
+
+}
+
+.containerimgDevsAbout{
+    display: flex;
+        justify-content: center;
+}
+  .ant-card-body {
+    height: auto !important;
+  }

@@ -1,0 +1,15 @@
+.containerFooter{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+div p{
+    font-weight: bold;
+    font-size: 13px;
+}

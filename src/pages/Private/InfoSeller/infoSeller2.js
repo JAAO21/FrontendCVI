@@ -1,13 +1,17 @@
 import { useState } from 'react';
-import { usePDF } from '@react-pdf/renderer';
-import QRCode from "react-qr-code";
+import { usePDF, PDFViewer } from '@react-pdf/renderer';
+import { Card, Descriptions, Image, Row, Typography, Button, message } from 'antd'
 
 import DocumentPdf from '../../../components/DocuemtPdf/DocumentPdf';
 import QRCode from "react-qr-code";
 
+const { Meta } = Card
+const { Title } = Typography
+
 export const InfoSeller2 = ({ seller, url }) => {
 
     const [generateQr, setGenerateQr] = useState(false);
+    const [messageApi, contextHolder] = message.useMessage()
     const [instance, update] = usePDF({
         document: <DocumentPdf
             firstName={seller.firstName}
@@ -43,52 +47,80 @@ export const InfoSeller2 = ({ seller, url }) => {
     } else {
         genderSeller = 'hombre'
     }
+
+    const success = () => {
+        messageApi.open({
+            type: 'success',
+            content: 'Archivo descargado correctamente!',
+        });
+    };
+
     return (
-        <div>
-            <h2>Nombre: {seller.firstName} {seller.firstLastName}</h2>
-            <img src={url} />
-
-            <div className='containerDataInfoSeller'>
-                <label>Nacionalidad: </label>
-                <p>{seller.nationality}</p>
-            </div>
-
-            <div className='containerDataInfoSeller'>
-                <label>Tipo de identificación: </label>
-                <p>{seller.identificationType}</p>
-            </div>
-
-            <div className='containerDataInfoSeller'>
-                <label>Numero de identificación: </label>
-                <p>{seller.identificationNumber}</p>
-            </div>
-
-            <div className='containerDataInfoSeller'>
-                <label>Genero: </label>
-                <p>{genderSeller}</p>
-            </div>
-
-            <div className='containerDataInfoSeller'>
-                <label>Edad: </label>
-                <p>{seller.age}</p>
-            </div>
-
-            <div className='containerDataInfoSeller'>
-                <label>fecha de nacimiento: </label>
-                <p>{seller.birthDate}</p>
-            </div>
-
-            <div className='containerDataInfoSeller'>
-                <label>Ubicación: </label>
-                <p>{seller.location_seller}</p>
-            </div>
-
-            <div className='containerDataInfoSeller'>
-                <label>producto: </label>
-                <p>{seller.product}</p>
-            </div>
-
-            {generateQr ? <QRCode value={'google.com'} /> : <button onClick={() => GenerateQR(instance)}>Descargar</button>}
-        </div>
+        <Row style={{ justifyContent: 'center', marginBottom: 20 }}>
+            {contextHolder}
+            <Card
+                style={{ width: 400, paddingLeft: 5, paddingRight: 5 }}
+                hoverable
+                actions={[
+                    <Button
+                        onClick={() => {
+                            GenerateQR(instance)
+                            success()
+                        }}
+                        type="primary"
+                    >
+                        Descargar
+                    </Button>
+                ]}
+                cover={(<>
+                    <Meta
+                        description={(
+                            <Descriptions
+                                title={<Title level={2}>{seller.firstName + " " + seller.firstLastName}</Title>}
+                                column={{ xxl: 1, xl: 1, lg: 1, md: 1, sm: 1, xs: 1 }}
+                                labelStyle={{ fontWeight: 'bold' }}
+                            >
+                                <Descriptions.Item label="Nacionalidad">{seller.nationality}</Descriptions.Item>
+                                <Descriptions.Item label="Tipo de identificación">{seller.identificationType}</Descriptions.Item>
+                                <Descriptions.Item label="Número de identificación">{seller.identificationNumber}</Descriptions.Item>
+                                <Descriptions.Item label="Género">{genderSeller}</Descriptions.Item>
+                                <Descriptions.Item label="Edad">{seller.age}</Descriptions.Item>
+                                <Descriptions.Item label="Fecha de nacimiento">{seller.birthDate}</Descriptions.Item>
+                                <Descriptions.Item label="Ubicación">{seller.location_seller}</Descriptions.Item>
+                                <Descriptions.Item label="Producto">{seller.product}</Descriptions.Item>
+                            </Descriptions>
+                        )}
+                    />
+                    <Image
+                        width={390}
+                        src={url}
+                    />
+                </>
+                )}
+                bordered={true}
+            >
+               {/*  <Button
+                    
+                    type="primary"
+                    style={{marginTop:'90px'}}
+                >
+                    <PDFViewer height={800}>
+                        <DocumentPdf
+                            firstName={seller.firstName}
+                            firstLastName={seller.firstLastName}
+                            nationality={seller.nationality}
+                            identificationType={seller.identificationType}
+                            identificationNumber={seller.identificationNumber}
+                            birthDate={seller.birthDate}
+                            age={seller.age}
+                            gender={seller.gender}
+                            location_seller={seller.location_seller}
+                            product={seller.product}
+                            img={url}
+                        />
+                    </PDFViewer>
+                </Button> */}
+            </Card>
+        </Row>
     )
 }

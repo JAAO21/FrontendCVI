@@ -1,0 +1,66 @@
+.ant-card-head-title {
+    font-size: 24px;
+}
+
+.ant-card-body {
+    height: 500px;
+
+}
+
+.contacContainer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url('../../../assests/images/comercioAmbulante.jpg');
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    margin-bottom: 10px;
+    height: 479px;
+
+}
+
+.formContact {
+    width: 100%;
+}
+
+.cardContact {
+
+    text-align: center;
+    text-align: center;
+}
+
+.inputContact {
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    height: 39px;
+    margin-bottom: 12px;
+}
+
+.textAreaContact {
+    margin-top: 15px;
+}
+
+.containerButtonContact {
+    display: grid;
+    justify-items: center;
+    font-size: 15px;
+}
+
+.buttonContact {
+    margin-bottom: 3px;
+    border-radius: 7px;
+}
+
+@media only screen and (max-width: 500px) {
+    .cardContact {
+
+        width: 200px !important;
+    }
+
+    .contacContainer {
+        margin-bottom: 32px;
+    }
+
+}

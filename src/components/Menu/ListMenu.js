@@ -1,12 +1,13 @@
 import './index.css';
-
+import useCVI from '../../hooks/useCVI'
 import { Link } from 'react-router-dom';
 
-const ListMenu = ({ cvi }) => {
+const ListMenu = () => {
   let listItem;
-  if (!Array.isArray(cvi)) {
+  const menu = useCVI({ 'atribute': 'menu' });
+  if (!Array.isArray(menu)) {
     listItem =
-      cvi?.row.map(data =>
+      menu?.row.map(data =>
         <li key={data.id} className="li-list">
           <Link to={data.name} className="nav-list">{data.name}</Link>
         </li>

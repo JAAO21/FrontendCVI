@@ -1,6 +1,123 @@
+.login-conatiner {
+    display: grid;
+    /* place-items: center; */
+    height: 100vh;
+    /* background-color: #c57d56; */
+    grid-template-columns: 40% 60%;
+}
 
-.login-conatiner{
+.containerImgLogin {
+    display: grid;
+    place-items: center;
+}
+
+.containerImg {
     display: flex;
+    /* height: 70px; */
+    /* border: 3px solid blue; */
     justify-content: center;
+    align-items: center;
+    background-color: #b384711a;
+}
+
+.imgLogoLogin {
+    height: 100px;
+    width: 116px;
+    border-radius: 57px;
+    border: 1px solid #2aa45b;
+}
+
+.containerForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vh;
     align-content: center;
+    justify-content: center;
+    background-color: #b38471;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-weight: 300;
+    font-size: 17px;
+    margin-bottom: 6px;
+    font-family: verdana;
+}
+
+form input {
+    border: 0px;
+    border-radius: 6px;
+}
+
+div div h2 {
+    text-align: center;
+    font-size: 33px;
+}
+
+.containerBtnLogin {
+    display: flex;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.btnLogin {
+    background-color: #d38f32;
+    width: 269px;
+    height: 28px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .containerImg {
+        display: none;
+    }
+
+    .login-conatiner {
+        display: flex;
+        background-image: url('../../../assests/images/comercioAmbulante.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .containerForm {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        background-color: #b3847182;
+        align-items: center;
+    }
+
+    .containerImgLogin {
+        margin-top: 45px;
+    }
+
+    form {
+        margin-top: 15px;
+    }
+
+    form label {
+        font-weight: 600;
+    }
+
+    form input {
+        height: 29px;
+    }
+
+    .btnLogin {
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
 }

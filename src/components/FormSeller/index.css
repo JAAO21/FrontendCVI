@@ -1,18 +1,26 @@
-
-
-.formFormSeller{
-    display: grid;
-    grid-template-columns: repeat(2,4fr);
-    gap: 30px;
+.formFormSeller {
+    padding: 0 20px;
+    background-repeat: repeat-y;
+    min-height: 100vh;
 }
 
-.itemFormSeller{
+.formTitle {
+    background: linear-gradient(200deg, rgb(240, 255, 238) 0%, rgb(147, 252, 172) 100%);
+    margin: 0;
+    padding: 10px 0;
+}
+
+.ant-row css-dev-only-do-not-override-k83k30 {
+    background-color: #b3847182 !important;
+}
+
+.itemFormSeller {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-.inputFormSeller{
+.inputFormSeller {
     display: flex;
     flex-wrap: wrap;
     align-content: center;

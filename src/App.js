@@ -6,9 +6,13 @@ import {
 import Dashboard from './pages/Private/Dashboard/Dashboard';
 import Seller from './pages/Private/Seller/seller';
 import InfoSeller from './pages/Private/InfoSeller/InfoSeller'
+import SearchSeller from './pages/Private/SearchSeller/SearchSeller.js'
 import Login from './pages/Public/Login/Login';
 import useToken from './hooks/useToken';
+import ConfiFirebase from './firebase/index.js'
 import './App.css';
+
+ConfiFirebase();
 
 const router = createBrowserRouter([
   {
@@ -26,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "carnetDigital",
     element: <Seller />
+  },
+  {
+    path: "/buscar",
+    element: <SearchSeller />
   },
   
 

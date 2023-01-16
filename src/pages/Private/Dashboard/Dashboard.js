@@ -1,40 +1,49 @@
-import { PDFViewer, PDFDownloadLink, usePDF } from '@react-pdf/renderer';
-import { useState } from 'react';
-import DocumentPdf from '../../../components/DocuemtPdf/DocumentPdf.js';
-import example from '../../../assests/images/example.png';
-import CviExample from '../../../assests/pdf/cvijorge.pdf'
-import QRCode from "react-qr-code";
-import useCVI from '../../../hooks/useCVI.js';
+
+import { Card } from 'antd';
 import ListMenu from '../../../components/Menu/ListMenu.js'
+import CaruselAnt from '../../../components/Carusel/Carusel.js';
+import imgVendedor5 from '../../../assests/images/imgVendedor5.jpeg'
+import Footer from '../../../components/Footer/Footer.js'
+import Contact from '../../../pages/Public/Contact/Contact.js'
+
+import './index.css'
 const Dashboard = () => {
-    const [verPdf, SetVerPdf] = useState(false);
-    const [generateQr, setGenerateQr] = useState(false);
-    const ViewPdf = () => {
+    const { Meta } = Card;
 
-        SetVerPdf(!verPdf);
-    }
-    const GenerateQR = () => {
-        setGenerateQr(!generateQr)
-    }
-
-    const Menu = useCVI({ 'atribute': 'menu' });
+  
 
     return (
-        <div style={{ "display": "flex", "justifyContent": "center", "alignItems": "centers", "flexDirection": "column" }}>
-            <ListMenu cvi={Menu} />
-            <h1>PDf vendedor</h1>
-            <img src={example} style={{ "height": "100px", "width": "150px" }} alt="no image" />
-            <label>Nombre</label>
-            <label>Cedula</label>
-            <label>Vendedor</label>
-            <label>Vigencia 01-02-2022</label>
-            <button onClick={ViewPdf}>Ver pdf</button>
-            <PDFDownloadLink document={<DocumentPdf />} fileName="name.pdf">
-                <button onClick={GenerateQR}>Descargar</button>
-            </PDFDownloadLink>
-            {verPdf ? <PDFViewer style={{ width: "100%", height: "90vh" }}><DocumentPdf /></PDFViewer> : null}
-            {generateQr ? <QRCode value={CviExample} /> : null}
+        <div >
+            <div className='containerCarouselAnt'>
+                <CaruselAnt />
+            </div>
+            <ListMenu  />
 
+            <div className='containerTextImgSeller'>
+                <div>
+                    <h1>
+                        ¿Que son los venderdores informales?
+                    </h1>
+                    <p>
+                        Como su mismo nombre indica, este tipo de vendedor no tiene un lugar fijo de venta,
+                        ya que se va desplazando de un lugar a otro buscando la mayor afluencia de público.
+                    </p>
+                </div>
+                <div>
+                    <Card
+                        hoverable
+                        style={{
+                            width: 240,
+                        }}
+                        cover={<img alt="example" src={imgVendedor5} />}
+                    >
+                        <Meta title="Vendededor informal" />
+                    </Card>
+                </div>
+            </div>
+           
+            <Contact />
+            <Footer />
         </div>
     )
 }
