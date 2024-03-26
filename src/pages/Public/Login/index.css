@@ -1,9 +1,21 @@
+.login-containerF {
+    background: linear-gradient( beige, #176B4D,beige);
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
 .login-conatiner {
     display: grid;
     /* place-items: center; */
-    height: 100vh;
-    /* background-color: #c57d56; */
-    grid-template-columns: 40% 60%;
+    height: 460px;
+    width: 790px;
+    background-color: white;
+    grid-template-columns: 60% 35%;
+    border-radius: 10px;
 }
 
 .containerImgLogin {
@@ -13,11 +25,16 @@
 
 .containerImg {
     display: flex;
-    /* height: 70px; */
+    height: 461px;
     /* border: 3px solid blue; */
     justify-content: center;
     align-items: center;
-    background-color: #b384711a;
+    background-image: url('../../../assests/images/BANNER---CVI-GARDEN.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    width: 432px;
 }
 
 .imgLogoLogin {
@@ -31,11 +48,11 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 100vh;
+    /* height: 100vh; */
     align-content: center;
     justify-content: center;
-    background-color: #b38471;
     align-items: center;
+    width: 100%;
 }
 
 form {
@@ -48,16 +65,23 @@ form label {
     font-size: 17px;
     margin-bottom: 6px;
     font-family: verdana;
+    color: #454545;
 }
 
 form input {
-    border: 0px;
     border-radius: 6px;
+    height: 29px;
+    border: 0.5px solid #c4c4c4;
+    margin-bottom: 15px;
 }
 
 div div h2 {
     text-align: center;
-    font-size: 33px;
+    font-size: 50px;
+    font-weight: 600;
+    color: #454545;
+    font-family: Noto Sans Thai;
+    margin-top: -13px;
 }
 
 .containerBtnLogin {
@@ -67,57 +91,45 @@ div div h2 {
 }
 
 .btnLogin {
-    background-color: #d38f32;
+    background-color: #85bd26;
     width: 269px;
-    height: 28px;
+    height: 40px;
     color: white;
     border: 0;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 
 @media only screen and (max-width: 1000px) {
-    .containerImg {
-        display: none;
-    }
 
     .login-conatiner {
         display: flex;
-        background-image: url('../../../assests/images/comercioAmbulante.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
-
-    .containerForm {
-        display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
-        width: 100%;
-        background-color: #b3847182;
-        align-items: center;
+        width: 80%;
+    }
+    .containerImg {
+    display: none;
     }
 
-    .containerImgLogin {
-        margin-top: 45px;
-    }
+   
 
-    form {
-        margin-top: 15px;
-    }
+form {
+    margin-top: 15px;
+}
 
-    form label {
-        font-weight: 600;
-    }
+form label {
+    font-weight: 600;
+}
 
-    form input {
-        height: 29px;
-    }
+form input {
+    height: 29px;
+}
 
-    .btnLogin {
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 5px;
-    }
+.btnLogin {
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}
 
 }

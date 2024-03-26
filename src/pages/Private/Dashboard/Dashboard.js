@@ -1,51 +1,63 @@
 
-import { Card } from 'antd';
-import ListMenu from '../../../components/Menu/ListMenu.js'
+
+import { Button, Layout } from 'antd';
+import { useNavigate } from "react-router-dom";
+
+import Footer from '../../../components/Footer/Footer.js';
 import CaruselAnt from '../../../components/Carusel/Carusel.js';
-import imgVendedor5 from '../../../assests/images/imgVendedor5.jpeg'
-import Footer from '../../../components/Footer/Footer.js'
 import Contact from '../../../pages/Public/Contact/Contact.js'
-
+import MyButton from '../../../components/Button/Button.js';
 import './index.css'
+
+
+const { Header, Content } = Layout;
 const Dashboard = () => {
-    const { Meta } = Card;
-
-  
-
+    const navigate = useNavigate();
+    const sendLogin =()=>{
+        
+        navigate('/');
+    }
     return (
-        <div >
-            <div className='containerCarouselAnt'>
-                <CaruselAnt />
-            </div>
-            <ListMenu  />
+        <Layout className='layoutDashboard'>
+          
+            <Layout>
+                <Header
+                    className='headerLogin'
+                    style={{
+                        padding: 0,
 
-            <div className='containerTextImgSeller'>
-                <div>
-                    <h1>
-                        ¿Que son los venderdores informales?
-                    </h1>
-                    <p>
-                        Como su mismo nombre indica, este tipo de vendedor no tiene un lugar fijo de venta,
-                        ya que se va desplazando de un lugar a otro buscando la mayor afluencia de público.
-                    </p>
+                    }}
+                    
+                > 
+                <div className='containerbtnLoginDashboard'>
+                    <MyButton name={'Login'}  htmlType="submit" onClick={sendLogin}/>
                 </div>
-                <div>
-                    <Card
-                        hoverable
-                        style={{
-                            width: 240,
-                        }}
-                        cover={<img alt="example" src={imgVendedor5} />}
-                    >
-                        <Meta title="Vendededor informal" />
-                    </Card>
-                </div>
-            </div>
-           
-            <Contact />
-            <Footer />
-        </div>
-    )
-}
+                </Header>
+                <Content
 
+                >
+                    <CaruselAnt />
+                    <div className='containerTextImgSeller'>
+
+                        <p className='ptextTitleDashboard'>
+                            ¿Que son los venderdores informales?
+                        </p>
+                        <p className='pTextDasboard'>
+                            Como su mismo nombre indica, este tipo de vendedor no tiene un lugar fijo de venta,
+                            ya que se va desplazando de un lugar a otro buscando la mayor afluencia de público.
+                        </p>
+
+                    </div>
+
+                    <Contact />
+                </Content>
+                <Footer />
+            </Layout>
+        </Layout>
+    );
+};
 export default Dashboard;
+
+
+
+

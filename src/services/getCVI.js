@@ -1,7 +1,7 @@
 
 const GetCVI = async ({ atribute, data, typeFile }) => {
   //let token = localStorage.getItem('token')
-  const url = `http://localhost:3500/${atribute}`;
+  const url = `https://cvi.up.railway.app/${atribute}`;
 
   if (typeFile && data) {
     console.log("DATA", data)
@@ -16,6 +16,7 @@ const GetCVI = async ({ atribute, data, typeFile }) => {
       .then(data => data.json())
   } else if (data) {
     console.log(data)
+    console.log(url)
     return await fetch(url, {
       method: 'POST',
       headers: {

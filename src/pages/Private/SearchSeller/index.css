@@ -1,16 +1,49 @@
 
-.containerImgSearchSeller {
+.headerInformationDowland{
     display: flex;
-    /* height: 70px; */
-    /* border: 3px solid blue; */
-    justify-content: center;
-    align-items: center;
-    background-color: #b384711a;
+    width: 100%;
 }
 
-.imgLogocontainerImgSearchSeller {
-    height: 100px;
-    width: 116px;
-    border-radius: 57px;
-    border: 1px solid #2aa45b;
+.cantRegistSearch{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+.cantRegistrosSearchSeller{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 225px;
+    height: 50px;
+    width: 50px;
+    align-content: center;
+    align-items: center;
+    border: 1px solid #10B759;
+}
+
+.btnDowlandCsv{
+    background-color: #10B759;
+    border: 1px solid #10B759;
+    height: 47px;
+    width: 47px !important;
+
+}
+
+.cantRegistSearchP{
+    font-weight: 700;
+    margin: 0px;
+}
+
+.containerbtnDowlandCsv{
+    display: flex;
+    flex-wrap: wrap;
+    
+    align-content: flex-end;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    
+    
+
 }

@@ -16,7 +16,7 @@ const Contact = () => {
       <Card
         title="Conctactenos ahora mismo!"
         className="cardContact"
-        style={{ width: 450 }}
+        style={{ width: 300,margin: 15 }}
       >
         <Form
           labelCol={{
@@ -30,20 +30,20 @@ const Contact = () => {
           className='formContact'
         >
           <Item label="Nombre" name="name" >
-            <Input size="large" prefix={<UserOutlined className="site-form-item-icon" />} />
+            <Input size="large" prefix={<UserOutlined  />} />
           </Item>
 
           <Item label="Email" name="email"  >
-            <Input size="large" prefix={<MailOutlined className="site-form-item-icon" />} />
+            <Input size="large" prefix={<MailOutlined  />} />
           </Item>
           <Item label="Celular" name="phone" >
-            <Input size="large" prefix={<PhoneOutlined className="site-form-item-icon" />} />
+            <Input size="large" prefix={<PhoneOutlined />} />
           </Item>
           <Item name="textData" >
             <Input.TextArea size="large" />
           </Item>
-          <div>
-            <MyButton name={'Enviar'} className='containerButtonContact' htmlType="submit" />
+          <div className="containerBtnContact">
+            <MyButton name={'Enviar'}  htmlType="submit" />
           </div>
         </Form>
 

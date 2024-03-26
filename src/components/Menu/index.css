@@ -1,15 +1,71 @@
+.ant-menu-item-only-child {
+    background-color: #85BD26 !important;
+    color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px !important;
+    margin-top: 17px !important;
+    width: 200px !important;
+}
 
 
-.ul-list{
+.userInformation {
     display: flex;
-    list-style: none;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 20px;
     justify-content: center;
 }
 
-.li-list{
-    margin:15px
+.userName {
+    color: #10B759;
+    font-weight: 800;
+    font-size: 15px;
+    height: 1px
 }
 
-.nav-list{
-    text-decoration: none;
+.userTypeIdentification {
+    color: #FDB600;
+    font-weight: 800;
+    font-size: 12px;
+    height: 1px
+}
+
+.userRol {
+    color: #FDB600;
+    font-weight: 800;
+    font-size: 10px;
+    height: 1px
+}
+
+.userInformationPersonal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 8px;
+}
+
+.imgInformation{
+    border: 1px solid #c4edd6;
+    border-radius: 50px;
+    height: 82px;
+    width: 70px;
+}
+
+.ant-menu-item-only-child {
+    padding-left: 0px !important;
+}
+
+.ant-menu-title-content {
+    text-align: center;
+}
+
+.ant-layout .ant-layout-sider-children{
+    height: 100vh;
+}
+.menuMenu {
+    color: white !important;
+    font-family: 'Overpass';
+    font-style: normal;
+    font-size: 15px;
+
 }

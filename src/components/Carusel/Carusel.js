@@ -1,26 +1,40 @@
 import { Carousel } from 'antd';
 
-import imgVendedor1 from '../../assests/images/vendedorInformal1.jpg';
-import imgVendedor2 from '../../assests/images/vendedorInformal2.jpeg';
-import imgVendedor3 from '../../assests/images/vendedorInformal3.png';
-import imgVendedor4 from '../../assests/images/vendedorInformal4.jpg';
+
+import imgVendedor1 from '../../assests/images/back.jpg';
+import imgVendedor2 from '../../assests/images/back.jpg';
+import imgVendedor3 from '../../assests/images/back.jpg';
+import imgVendedor4 from '../../assests/images/back.jpg';
 
 import './index.css';
 
-const CaruselAnt = () => (
-    <Carousel autoplay className='CarouselAnt'>
+const contentStyle = {
+    height: '160px',
+    with:'100px',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
+  };
+
+const CaruselAnt = () => {
+
+    return (
+        <Carousel autoplay className='CarouselAnt'>
         <div>
-            <img src={imgVendedor1} />
+          <img className='imgCarouselAnt' src={imgVendedor1} />
         </div>
         <div>
-            <img src={imgVendedor2} />
+        <img className='imgCarouselAnt' src={imgVendedor1} />
         </div>
         <div>
-            <img src={imgVendedor3} />
+        <img className='imgCarouselAnt' src={imgVendedor1} />
         </div>
         <div>
-            <img src={imgVendedor4} />
+        <img className='imgCarouselAnt' src={imgVendedor1} />
         </div>
-    </Carousel>
-);
+      </Carousel>
+)
+    
+};
 export default CaruselAnt;

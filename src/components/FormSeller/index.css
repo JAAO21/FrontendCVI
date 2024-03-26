@@ -5,9 +5,11 @@
 }
 
 .formTitle {
-    background: linear-gradient(200deg, rgb(240, 255, 238) 0%, rgb(147, 252, 172) 100%);
+    /* background: linear-gradient(200deg, rgb(240, 255, 238) 0%, rgb(147, 252, 172) 100%); */
+    background-color: white;
     margin: 0;
     padding: 10px 0;
+    text-align: center;
 }
 
 .ant-row css-dev-only-do-not-override-k83k30 {

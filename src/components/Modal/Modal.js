@@ -33,7 +33,7 @@ const Modal = ({ seller, setSeller, callback }) => {
 
         console.log("DATA", data)
 
-        fetch(`http://localhost:3500/seller/${seller.id}`, {
+        fetch(`https://cvi.up.railway.app/seller/${seller.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

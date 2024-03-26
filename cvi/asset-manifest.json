@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.383016e9.css",
+    "main.js": "/static/js/main.f5a7a161.js",
+    "static/js/787.7ac5ce83.chunk.js": "/static/js/787.7ac5ce83.chunk.js",
+    "static/media/BANNER---CVI-GARDEN.jpg": "/static/media/BANNER---CVI-GARDEN.506e4b1947ab3fe6c538.jpg",
+    "static/media/vendedorInformal3.png": "/static/media/vendedorInformal3.1b7c790dbbcf87854e2e.png",
+    "static/media/vendedorInformal4.jpg": "/static/media/vendedorInformal4.a69e605021ace5fbf3bf.jpg",
+    "static/media/vendedorInformal2.jpeg": "/static/media/vendedorInformal2.4a50504c1fee4f797402.jpeg",
+    "static/media/cvi.logo.jpg": "/static/media/cvi.logo.dc724e458da771f6d2fa.jpg",
+    "index.html": "/index.html",
+    "main.383016e9.css.map": "/static/css/main.383016e9.css.map",
+    "main.f5a7a161.js.map": "/static/js/main.f5a7a161.js.map",
+    "787.7ac5ce83.chunk.js.map": "/static/js/787.7ac5ce83.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.383016e9.css",
+    "static/js/main.f5a7a161.js"
+  ]
+}

@@ -1,24 +1,84 @@
-.ant-card-body {
-    height: 55px;
+.layoutDashboard {
+
+    padding: 0px;
+            
 }
 
-h1 {
-    font: verdana;
-    text-align: center;
+.sidebarDashboard {
+    flex: 0 0 200px;
+    max-width: 260px !important;
+    min-width: 260px !important;
+}
 
+.headerLogin {
+    background-color: #FDA61B !important;
+
+}
+
+.sidebarDashboard {
+    background-color: white !important;
+}
+
+.logo {
+    background-image: url('../../../assests/logo/cvi.logo.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 64px;
+    width: 250px;
+
+    background-color: #FDA61B;
 }
 
 .containerTextImgSeller {
-    display: grid;
-    place-items: center;
-    grid-template-columns: 60% 40%;
-    background-color: #b3847182;
+    display: flex;
+
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    max-width: 100%;
+}
+
+.ptextTitleDashboard {
+    color: #10B759;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.pTextDasboard {
+    color: #FDB600;
+    font-weight: 800;
+    font-size: 12px;
+    width: 550px;
+}
+
+
+.ant-btn-default {
+    background-color: #10B759;
+}
+
+.containerbtnLoginDashboard{
+    
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+    padding: 15px;
 }
 
 @media only screen and (max-width: 850px) {
-    .containerTextImgSeller{
+    .containerTextImgSeller {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+    }
+}
+
+@media only screen and (min-width: 590px) {
+    .pTextDasboard {
+        width: 332px;
     }
 }
